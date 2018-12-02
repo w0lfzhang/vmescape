@@ -1,11 +1,14 @@
 ## Compile pcimem
+```
 musl-gcc  -static pcimem.c -o pcimem
+```
 
 ## repacke fs
+```
 find . | cpio -H newc -o > ../initramfs-busybox-x86_64.cpio
 gzip initramfs-busybox-x86_64.cpio
-
-WE can use fastbin attack to exploit UAF.
+```
+We can use fastbin attack to exploit UAF.
 
 When you debug the program, you'll find it doesn't use the main_arena.
 ```
