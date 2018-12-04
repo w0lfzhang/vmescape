@@ -99,7 +99,7 @@ void pcimem_write(uint64_t target, char access_type, uint64_t writeval)
 			type_width = 8;
 			break;
 	}
-
+	//readback not correct?
 	printf("Written 0x%0*lX; readback 0x%*lX\n", type_width, writeval, type_width, read_result);
 	if(munmap(map_base, MAP_SIZE) == -1) 
 		PRINT_ERROR;
