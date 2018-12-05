@@ -1,0 +1,1 @@
+See https://www.w0lfzhang.com/2018/12/05/xnuca-SSD-QEMU-escape/
